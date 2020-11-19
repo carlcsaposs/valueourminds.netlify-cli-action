@@ -1,0 +1,13 @@
+name: 'Netlify CLI'
+description: 'Run commands with Netlify CLI'
+inputs:
+  command:
+    description: 'Netlify CLI command'
+    required: true
+runs:
+  using: "composite"
+  steps: 
+    - run: sudo yarn global add netlify-cli
+      shell: bash
+    - run: netlify ${{ inputs.command }}
+      shell: bash
