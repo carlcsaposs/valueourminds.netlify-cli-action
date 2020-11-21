@@ -6,6 +6,6 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: docker://ghcr.io/valueourminds/netlify-cli-docker-container/netlify-cli:latest
+  image: docker://ghcr.io/valueourminds/netlify-cli-action/netlify-cli:latest
   args:
     - '${{ inputs.command }}'
