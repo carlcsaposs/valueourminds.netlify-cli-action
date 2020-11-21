@@ -5,9 +5,7 @@ inputs:
     description: 'Netlify CLI command'
     required: true
 runs:
-  using: "composite"
-  steps: 
-    - run: sudo yarn global add netlify-cli
-      shell: bash
-    - run: netlify ${{ inputs.command }}
-      shell: bash
+  using: 'docker'
+  image: docker://ghcr.io/valueourminds/netlify-cli-docker-container/netlify-cli:latest
+  args:
+    - '${{ inputs.command }}'
